@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGECOLOR</title>
+    <style>
+        body {
+            background-color: #212122;
+            text-align: center;
+            height: 90vh;
+        }
+       
+        #star {
+            background-color: seagreen;
+            width: 90vh;
+            height: 90vh;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        button {
+            height: 50px;
+            width: 100px;
+            border-radius: 48%;
+            background-color: #eedc82;
+            font-weight: bolder;
+            font-size: 18px;
+            color: rebeccapurple;
+            position: absolute; 
+            z-index: 1; 
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        button:hover {
+            border: 2px solid seagreen; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px seagreen; 
+        }
+
+
+        @media (max-width: 600px) {
+            #star {
+                width: 80vw;
+                height: 80vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="star"></div><br>
+    <button id="btn">Click ₊✧</button>
+
+    <script>
+        const star = document.getElementById("star");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener('click', changeColor);
+
+        function changeColor() {
+            if (star.style.backgroundColor === "cornflowerblue") {
+                star.style.backgroundColor = "seagreen";
+            } else {
+                star.style.backgroundColor = "cornflowerblue";
+            }
+        }
+    </script>
+</body>
+</html>
